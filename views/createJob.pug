@@ -6,6 +6,16 @@ block title
 block css
   link(rel='stylesheet', href='/css/create-job.css')
 
+block navigation
+  .container.container-fluid
+    nav.navbar.navbar-default
+      .container-fluid
+        ul.nav.navbar-nav
+          li
+            a(href='/purchaser/dash') Dashboard
+          li
+            a(href='/purchaser/createJob') Create job
+
 block content
   .container.container-fluid
     .page-header
@@ -16,7 +26,7 @@ block content
         h3.panel-title
           | General info
       .panel-body
-        form(action='/createJob' method='POST', enctype="application/x-www-form-urlencoded")
+        form(action='/purchaser/createJob' method='POST', enctype="application/x-www-form-urlencoded")
           .form-section
             .col-lg-3
               .input-group
@@ -27,13 +37,13 @@ block content
             .col-lg-3
               .input-group
                 span.input-group-addon#quantity2
-                  | Q1
+                  | Q2
                 input.form-control(
                 type='text' placeholder='Quantity 2' aria-describedby='quantity2' name='q2')
             .col-lg-3
               .input-group
                 span.input-group-addon#quantity3
-                  | Q1
+                  | Q3
                 input.form-control(
                 type='text' placeholder='Quantity 3' aria-describedby='quantity3' name='q3')
           .form-section

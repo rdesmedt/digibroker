@@ -6,6 +6,16 @@ block title
 block css
   link(rel='stylesheet', href='/css/purchaseJobDetail.css')
 
+block navigation
+  .container.container-fluid
+    nav.navbar.navbar-default
+      .container-fluid
+        ul.nav.navbar-nav
+          li
+            a(href='/purchaser/dash') Dashboard
+          li
+            a(href='/purchaser/createJob') Create job
+
 block content
   .container.container-fluid
     .panel.panel-primary

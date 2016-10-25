@@ -17,7 +17,7 @@ function createJob(req, res){
       console.log('ERROR: ', err);
       res.status(500).json({message: 'something went wrong'});
     }else {
-      res.redirect('/purchaseDash');
+      res.redirect('/purchaser/dash');
     }
   });
 }

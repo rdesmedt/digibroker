@@ -3,6 +3,14 @@ extends layout.pug
 block title
   title #{job.title}
 
+block navigation
+  .container.container-fluid
+    nav.navbar.navbar-default
+      .container-fluid
+        ul.nav.navbar-nav
+          li
+            a(href='/vendor/dash') Dashboard
+
 block content
   .container.container-fluid
     .panel.panel-primary
@@ -27,3 +35,25 @@ block content
         p #{job.delivery}
         h4 Deliver time
         p #{job.deliverTime}
+
+        form(action='/vendor/jobOffer/' + job._id method='POST', enctype="application/x-www-form-urlencoded")
+          .form-section
+            .col-lg-3
+              .input-group
+                span.input-group-addon#quantity1
+                  | Q1
+                input.form-control(
+                type='text' placeholder='Quantity 1' aria-describedby='quantity1' name='q1')
+            .col-lg-3
+              .input-group
+                span.input-group-addon#quantity2
+                  | Q2
+                input.form-control(
+                type='text' placeholder='Quantity 2' aria-describedby='quantity2' name='q2')
+            .col-lg-3
+              .input-group
+                span.input-group-addon#quantity3
+                  | Q3
+                input.form-control(
+                type='text' placeholder='Quantity 3' aria-describedby='quantity3' name='q3')
+          input.btn.btn-primary(type='submit', value='Submit')

@@ -3,10 +3,33 @@ extends layout.pug
 block title
   title Create a job
 
+block navigation
+  .container.container-fluid
+    nav.navbar.navbar-default
+      .container-fluid
+        ul.nav.navbar-nav
+          li
+            a(href='/purchaser/dash') Dashboard
+          li
+            a(href='/purchaser/createJob') Create job
+
 block content
   .container.container-fluid
-    .list-group
-      for item in list
-        a.list-group-item(href='/purchase/jobDetail/' + item._id)
-          h4.list-group-item-heading #{item.title}
-          p.list-group-item-text #{item.description}
+    .panel.panel-primary
+      .panel-heading Job list
+      table.table
+        thead
+          tr
+            th #
+            th Title
+            th Description
+            th Offer time
+            th Deliver time
+        tbody
+          for item, index in list
+            tr(onclick="document.location = '/purchaser/jobDetail/" + item._id + "';")
+              th(scope='row') #{index +1}
+              td #{item.title}
+              td #{item.description}
+              td #{item.offerTime}
+              td #{item.deliverTime}

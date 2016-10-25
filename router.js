@@ -4,6 +4,7 @@ const job = require('./components/job/job');
 const pDash = require('./components/purchaseDash/purchaseDash');
 const vDash = require('./components/vendor/vendorDash');
 const vJobDetail = require('./components/vendor/vendorJobDetail');
+const offer = require('./components/offers/offer');
 
 module.exports = (app) => {
   app.get('/', main.landing);
@@ -11,16 +12,20 @@ module.exports = (app) => {
   // purchaser
 
   // jobs
-  app.get('/createJob', job.getCreateJob);
-  app.post('/createJob', job.createJob);
-  app.get('/purchase/jobDetail/:id', job.purchaseDetail);
+  app.get('/purchaser/createJob', job.getCreateJob);
+  app.post('/purchaser/createJob', job.createJob);
+  app.get('/purchaser/jobDetail/:id', job.purchaseDetail);
 
   // dashboard
-  app.get('/purchaseDash', pDash.getDashboard);
+  app.get('/purchaser/dash', pDash.getDashboard);
 
   // vendor
 
   // dashboard
   app.get('/vendor/dash', vDash.getDashboard);
+
+  // job
   app.get('/vendor/jobDetail/:id', vJobDetail.getJobDetail);
+  app.post('/vendor/jobOffer/:id', offer.createJobOffer);
+
 };

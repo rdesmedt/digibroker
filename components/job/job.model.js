@@ -52,7 +52,10 @@ let job = new Schema({
   offerTime:{
     type: String,
     required: true
-  }
+  },
+  offers: [{
+    type: Schema.Types.ObjectId, ref: 'Offer'
+  }]
 });
 
 module.exports = mongoose.model('Job', job);

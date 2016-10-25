@@ -10,3 +10,4 @@ function getJobDetail (req, res){
     else res.status(200).render('vendorJobDetail', {job: job});
   });
 }
+

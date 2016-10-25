@@ -1,0 +1,105 @@
+extends layout.pug
+
+block title
+  title Create a job
+
+block css
+  link(rel='stylesheet', href='/css/create-job.css')
+
+block content
+  .container.container-fluid
+    .page-header
+      h1 Create a job
+
+    .panel.panel-primary
+      .panel-heading
+        h3.panel-title
+          | General info
+      .panel-body
+        form(action='/createJob' method='POST', enctype="application/x-www-form-urlencoded")
+          .form-section
+            .col-lg-3
+              .input-group
+                span.input-group-addon#quantity1
+                  | Q1
+                input.form-control(
+                type='text' placeholder='Quantity 1' aria-describedby='quantity1' name='q1')
+            .col-lg-3
+              .input-group
+                span.input-group-addon#quantity2
+                  | Q1
+                input.form-control(
+                type='text' placeholder='Quantity 2' aria-describedby='quantity2' name='q2')
+            .col-lg-3
+              .input-group
+                span.input-group-addon#quantity3
+                  | Q1
+                input.form-control(
+                type='text' placeholder='Quantity 3' aria-describedby='quantity3' name='q3')
+          .form-section
+            .input-group.col-lg-10
+              span.input-group-addon#jobTitle
+                | title
+              input.form-control(
+              type='text' placeholder='title' aria-describedby='jobTitle' name='title')
+          .form-section
+            .input-group.col-lg-10
+              span.input-group-addon#jobDescription
+                | description
+              input.form-control(
+              type='textarea' placeholder='description' aria-describedby='jobDescription' name='description')
+          .form-section
+            .input-group.col-lg-10
+              span.input-group-addon#size
+                | size
+              input.form-control(
+              type='text' placeholder='width x height in mm' aria-describedby='size' name='size')
+          .form-section
+            .input-group.col-lg-10
+              span.input-group-addon#colouring
+                | colouring
+              input.form-control(
+              type='text' placeholder='recto colours - verso colours' aria-describedby='colouring' name='colouring')
+          .form-section
+            .input-group.col-lg-10
+              span.input-group-addon#finishing
+                | finishing
+              input.form-control(
+              type='text' placeholder='finishing' aria-describedby='finishing' name='finishing')
+          .form-section
+            .input-group.col-lg-10
+              span.input-group-addon#packaging
+                | packaging
+              input.form-control(
+              type='text' placeholder='packaging details' aria-describedby='packaging' name='packaging')
+          .form-section
+            .input-group.col-lg-10
+              span.input-group-addon#delivery
+                | delivery
+              input.form-control(
+              type='text' placeholder='delivery details' aria-describedby='delivery' name='delivery')
+          .form-section
+            .row
+              .col-sm-6
+                .form-group
+                  #deliverDate.input-group.date
+                    input.form-control(type='text' placeholder='choose your delivery time' name='deliverTime')
+                    span.input-group-addon
+                      span.glyphicon.glyphicon-calendar
+              script(type='text/javascript').
+                $(function () {
+                  $('#deliverDate').datetimepicker();
+                });
+          .form-section
+            .row
+              .col-sm-6
+                .form-group
+                  #offerDate.input-group.date
+                    input.form-control(type='text' placeholder='choose date and time when offer closes' name='offerTime')
+                    span.input-group-addon
+                      span.glyphicon.glyphicon-calendar
+              script(type='text/javascript').
+                $(function () {
+                  $('#offerDate').datetimepicker();
+                });
+          input.btn.btn-primary(type='submit', value='Submit')

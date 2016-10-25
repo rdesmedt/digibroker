@@ -1,0 +1,32 @@
+extends layout.pug
+
+block title
+  title #{job.title}
+
+block css
+  link(rel='stylesheet', href='/css/purchaseJobDetail.css')
+
+block content
+  .container.container-fluid
+    .panel.panel-primary
+      .panel-heading
+        h3.panel-title
+          | #{job.title} - #{job.offerTime}
+      .panel-body
+        h4 Description
+        p #{job.description}
+        .quantity
+          h4 Quantity
+          p #{job.q1} - #{job.q2} - #{job.q3}
+        h4 Size
+        p #{job.size}
+        h4 Colouring
+        p #{job.colouring}
+        h4 Finishing
+        p #{job.finishing}
+        h4 Packaging
+        p #{job.packaging}
+        h4 Delivery
+        p #{job.delivery}
+        h4 Deliver time
+        p #{job.deliverTime}

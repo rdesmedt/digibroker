@@ -1,0 +1,25 @@
+extends layout.pug
+
+block title
+  title Choose your type
+
+block content
+  .container.container-fluid
+    .page-header
+      h1 Choose your usage
+    .jumbotron
+      h2 Printing purchaser
+      p
+        | You are looking for a suitable printing firm to take on your
+        | job at the best price and highest quality?
+      p
+        a.btn.btn-primary.btn-lg(href='/purchaseDash' role='button')
+          | Press here
+
+      h2 Printing firm
+        p
+          | You are looking for an easy way to find jobs
+          | suitable for your business?
+        p
+          a.btn.btn-primary.btn-lg(href='/vendor/dash' role='button')
+            | Press here

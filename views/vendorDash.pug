@@ -1,0 +1,12 @@
+extends layout.pug
+
+block title
+  title Create a job
+
+block content
+  .container.container-fluid
+    .list-group
+      for item in list
+        a.list-group-item(href='/vendor/jobDetail/' + item._id)
+          h4.list-group-item-heading #{item.title}
+          p.list-group-item-text #{item.description}
